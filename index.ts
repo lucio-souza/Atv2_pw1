@@ -1,12 +1,12 @@
 import express from "express";
-import { createUser } from "./src/controller/userController";
+import { userRouter } from "./src/routes/UserRoutes";
 
 const app=express();
 app.use(express.json())
 
 const porta=8080;
 
-app.post("/user",createUser)
+app.use("/user",userRouter)
 
 app.listen(porta,()=>{
     console.log("servidor online");

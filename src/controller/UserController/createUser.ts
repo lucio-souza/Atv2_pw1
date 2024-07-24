@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import {v4 as uuid} from "uuid"
-import { userbody } from "../types/UserType";
+import { userbody } from "../../types/UserType";
 import { Request,Response } from "express";
 
 const prisma=new PrismaClient();
