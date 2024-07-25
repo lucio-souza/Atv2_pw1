@@ -1,11 +1,11 @@
 import { PrismaClient } from "@prisma/client";
 import {v4 as uuid} from "uuid"
-import { userType } from "../../types/UserType";
+import { UserBody } from "../../types/UserBody";
 import { Request,Response } from "express";
 
 const prisma=new PrismaClient();
 
-export const createUser=async(req:Request<{},{},userType>,res:Response)=>{
+export const createUser=async(req:Request<{},{},UserBody>,res:Response)=>{
     const {name,username}=req.body;
     try {
         const newUser=await prisma.user.create({

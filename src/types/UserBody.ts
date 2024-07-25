@@ -1,4 +1,4 @@
-export interface userType{
+export interface UserBody{
     name:string;
     username:string;
 }

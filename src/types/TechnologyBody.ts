@@ -1,4 +1,4 @@
-export interface TechnologyType {
+export interface TechnologyBody {
     title: string;
     deadline: string;
   }
