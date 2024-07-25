@@ -3,7 +3,7 @@ import { Request, Response,NextFunction } from 'express';
 
 const prisma=new PrismaClient();
 
-const checkNoExistsUserAccount=async (req:Request,res:Response,next:NextFunction)=>{
+export const checkNoExistsUserAccount=async (req:Request,res:Response,next:NextFunction)=>{
     const {username}=req.body;
     try {
         const user=await prisma.user.findUnique({
@@ -21,5 +21,3 @@ const checkNoExistsUserAccount=async (req:Request,res:Response,next:NextFunction
         return res.status(500).json({ error: 'Internal server error' });
     }
     }
-
-export default checkNoExistsUserAccount;
