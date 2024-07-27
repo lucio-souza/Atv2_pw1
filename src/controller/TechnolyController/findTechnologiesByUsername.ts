@@ -10,7 +10,7 @@ export const findTechnologiesByUsername=async(req:Request,res:Response)=>{
                 idUser:req.userIndex
             }
         })
-        res.status(201).json(technologies)
+        res.status(200).json(technologies)
     } catch (error) {
         console.log(error);
     }
