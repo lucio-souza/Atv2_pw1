@@ -6,8 +6,8 @@ import { TechnologyParams } from "../../types/TechnologyParams";
 
 const prisma=new PrismaClient();
 
-export const partialUpdateTechnology=async(req:Request<TechnologyParams, TechnologyBody>,res:Response)=>{
-    const {id}=req.params;
+export const partialUpdateTechnology=async(req:Request,res:Response)=>{
+    const {id}=req.params as TechnologyParams;
     try {
         const technology=await prisma.technology.update({
             where:{

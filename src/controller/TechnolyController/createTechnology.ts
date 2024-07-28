@@ -5,8 +5,8 @@ import { TechnologyBody } from "../../types/TechnologyBody";
 
 const prisma=new PrismaClient();
 
-export const createTechnology=async(req: Request<{}, {}, TechnologyBody>,res:Response)=>{
-    const {title,deadline}=req.body;
+export const createTechnology=async(req: Request,res:Response)=>{
+    const {title,deadline}=req.body as TechnologyBody;
     try {
         const technology=await prisma.technology.create({
             data:{

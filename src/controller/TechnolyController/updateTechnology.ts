@@ -6,8 +6,8 @@ import { TechnologyParams } from "../../types/TechnologyParams";
 const prisma=new PrismaClient();
 
 export const updateTechnology=async(req:Request<TechnologyParams, TechnologyBody>,res:Response)=>{
-    const {id}=req.params;
-    const {title,deadline}=req.body
+    const {id}=req.params as TechnologyParams;
+    const {title,deadline}=req.body as TechnologyBody;
 
     try{
         const technology=await prisma.technology.update({
