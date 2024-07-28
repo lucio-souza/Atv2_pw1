@@ -8,7 +8,7 @@ const prisma=new PrismaClient();
 export const deleteTechnology=async(req:Request,res:Response)=>{
     const {id}=req.params as TechnologyParams;
     try {
-        const deleteTechnology=await prisma.technology.delete({
+        await prisma.technology.delete({
             where:{
                 id
             }
